@@ -25,7 +25,7 @@ public class NoteServiceImpl implements NoteService {
     @Transactional
     public void addNote(NoteDto noteDto, Long userId) {
         Optional<User> userOptional = userRepository.findById(userId);
-        Note note = new Note(NoteDto);
+        Note note = new Note(noteDto);
         userOptional.ifPresent(note::setUser);
         noteRepository.saveAndFlush(note);
     }

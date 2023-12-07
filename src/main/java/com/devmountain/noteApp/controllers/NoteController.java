@@ -24,12 +24,12 @@ public class NoteController {
         noteService.addNote(noteDto, userId);
     }
 
-    @DeleteMapping("user/{userId}")
+    @DeleteMapping("/{noteId}")
     public void deleteNoteById(@PathVariable Long noteId) {
         noteService.deleteNoteById(noteId);
     }
 
-    @PutMapping
+    @PutMapping("/")
     public void updateNote(@RequestBody NoteDto noteDto) {
         noteService.updateNoteById(noteDto);
     }
